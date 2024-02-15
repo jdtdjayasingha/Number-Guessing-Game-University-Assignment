@@ -43,12 +43,11 @@ class GuessNumberForm extends StatefulWidget {
 class _GuessNumberFormState extends State<GuessNumberForm> {
   final TextEditingController _controller = TextEditingController();
   int _attempts = 0;
-  final int _secretNumber = 7; // Change this to any secret number
+  final int _secretNumber = 7;
 
   void _checkGuess(BuildContext context) {
     int guess = int.tryParse(_controller.text) ?? 0;
     if (guess == _secretNumber) {
-      //Navigator.pushNamed(context, '/correct');
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const CorrectGuessPage()),
@@ -71,31 +70,67 @@ class _GuessNumberFormState extends State<GuessNumberForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          'I have a secret number in my mind (1 - 10). You have 3 chances to guess it.',
-          textAlign: TextAlign.center,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: TextField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
             ),
-            controller: _controller,
-            keyboardType: TextInputType.number,
-            inputFormatters: [
-              FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
-            ],
+            child: Image.asset(
+              'pic.png',
+              width: 600.0,
+              height: 240.0,
+              // fit: BoxFit.cover,
+            ),
           ),
-        ),
-        ElevatedButton(
-          onPressed: () => _checkGuess(context),
-          child: const Text('Submit'),
-        ),
-      ],
+          const Text(
+            'I have a secret number in my mind (1 - 10). You\nhave 3 chances to guess it.',
+            textAlign: TextAlign.center,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+              ),
+              controller: _controller,
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+              onPressed: () => _checkGuess(context),
+              child: const Padding(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  bottom: 10,
+                ),
+                child: Text(
+                  'Submit',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
