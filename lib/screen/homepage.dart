@@ -43,7 +43,7 @@ class GuessNumberForm extends StatefulWidget {
 class _GuessNumberFormState extends State<GuessNumberForm> {
   final TextEditingController _controller = TextEditingController();
   int _attempts = 0;
-  final int _secretNumber = 7;
+  final int _secretNumber = 8;
 
   void _checkGuess(BuildContext context) {
     int guess = int.tryParse(_controller.text) ?? 0;
