@@ -14,19 +14,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Guess Game",
-          style: TextStyle(
-            color: Colors.white,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Guess Game",
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
+          backgroundColor: Colors.blue,
+          elevation: 5,
         ),
-        backgroundColor: Colors.blue,
-        elevation: 5,
-      ),
-      body: const Center(
-        child: GuessNumberForm(),
+        body: const Center(
+          child: GuessNumberForm(),
+        ),
       ),
     );
   }

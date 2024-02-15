@@ -40,7 +40,7 @@ class _CorrectGuessPageState extends State<CorrectGuessPage> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.only(
