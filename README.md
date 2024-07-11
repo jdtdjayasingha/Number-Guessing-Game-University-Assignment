@@ -1,4 +1,4 @@
-# Guess Number Game
+# Number Guessing Game University Assignment
 
 <h2> Creating the Interfaces of the Game </h2> <br>
 <div>
