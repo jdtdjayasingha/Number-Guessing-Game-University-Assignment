@@ -8,9 +8,14 @@
  <img width=175 src="https://github.com/jdtdjayasingha/Login-Screen-University-Assignment/assets/153268657/c0123daa-0d50-498c-bd0d-2d5e89367d64"/> 
 </div>
 <h2>Key Features</h2>
-<p>Navigation Between Screens</p>
-<p>StatelessWidget, StatefulWidget and State</p>
-<p>Adding An Alert Box From Pub Dev (Flutter Alert)</p>
+
+<td align="left">
+ 
+- Navigation Between Screens
+- StatelessWidget, StatefulWidget and State
+- Adding An Alert Box From Pub Dev
+
+</td>
 
 
 
